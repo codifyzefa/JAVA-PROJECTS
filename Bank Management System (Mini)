@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+class Account {
+    String name;
+    String Phoneno;
+    String Address;
+    int balance = 0;
+
+    Account(String name, String Phoneno, String Address) 
+    {
+        this.name = name;
+        this.Phoneno = Phoneno;
+        this.Address = Address;
+    }
+
+    public void deposit(int Dep) 
+    {
+        balance = balance + Dep;
+        System.out.println("<<<< Amount Deposited Successfully >>>>");
+    }
+
+    public int withdraw(int with) {
+        if (with > balance) 
+        {
+            System.out.println("Insufficient balance. Withdrawal failed.");
+            return 0;
+        } else 
+        {
+            balance = balance - with;
+            System.out.println("Balance is " + balance);
+            System.out.println("<<<< Amount Withdrawn Successfully >>>>");
+            return with;
+        }
+    }
+
+    public void display() 
+    {
+        System.out.println("-------------------------------------------------------------------------------------------------------");
+        System.out.println("Name: " + name + " | Address: " + Address + " | Phone Number: " + Phoneno + " | Total balance: " + balance);
+        System.out.println("-------------------------------------------------------------------------------------------------------");
+    }
+}
+
+public class bank2 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("ENTER THE NAME: ");
+        String name = sc.nextLine();
+        System.out.println("ENTER THE PHONE NUMBER: ");
+        String Phoneno = sc.next();
+        sc.nextLine();
+        System.out.println("ENTER THE ADDRESS: ");
+        String Address = sc.nextLine();
+        Account obj = new Account(name, Phoneno, Address);
+        System.out.println("<<< Enter the Amount you want to Deposit >>>");
+        int Dep = sc.nextInt();
+        obj.deposit(Dep);
+        System.out.println("<<< Enter the Amount you want to Withdraw >>>");
+        int with = sc.nextInt();
+        int withdrawnAmount = obj.withdraw(with);
+        System.out.println("Your Withdrawn Amount is: " + withdrawnAmount);
+        System.out.println();
+        System.out.println("System Receipt is as follows: ");
+        obj.display();
+       sc.close();
+    }
+}
