@@ -1,0 +1,54 @@
+/* This is the property of codifyzefa .../*
+import java.util.*;
+
+
+class Game
+{
+    int Number;
+    int Input ;
+    
+   public Game()
+    {
+        Random rand = new Random();
+        Number=rand.nextInt(100);
+    }
+   public void InputNumber()
+   {
+       Scanner sc =new Scanner(System.in);
+       System.out.println("Enter the Input Number ...");
+       Input = sc.nextInt();
+   }
+   public boolean Guessnumber()
+   {
+       if(Input==Number)
+       {
+           System.out.println("Find the Number Successfully");
+           return true;
+       }
+       else if(Input<Number)
+       {
+           System.out.println("The Input Number is Too Low...");
+       }
+       else if(Input>Number)
+       {
+           System.out.println("The Input Number is Too High...");
+       }
+       return false;
+   }
+    
+}
+
+public class Zone {
+    public static void main (String[] args)
+    {
+        Game obj = new Game();
+  
+        boolean b=false;
+        while(!b)
+        {
+            obj.InputNumber();
+            b=obj.Guessnumber();
+            System.out.println(b);
+        }
+    }
+}
