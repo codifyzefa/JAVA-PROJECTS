@@ -1,0 +1,53 @@
+// This Code is Property of Codifyzfea
+class Mammals
+{
+    public void printMammal()
+    {
+        System.out.println("I am Mammal");
+    }
+}
+class marineAnimal extends Mammals
+{
+    public void printMarineAnimal()
+    {
+        System.out.println("I am Marine Anmial");
+    }
+}
+class BlueWhale extends marineAnimal
+{
+    marineAnimal marine = new marineAnimal();
+    public void printBlueWhale()
+    {
+    
+        System.out.println("I belong to both the categories: Mammals as well as Marine Animals");
+    }
+    public void printmarine()
+    {
+        marine.printMarineAnimal();
+    }
+    }
+
+public class qno4 {
+    public static void main(String[] args) {
+        Mammals mammals = new Mammals();
+        MarineAnimals marineAnimals = new MarineAnimals();
+        BlueWhale bluewhale = new BlueWhale();
+
+        System.out.println("The Function calling of Class Mammals");
+        mammals.printMammal();
+
+        System.out.println("The Function calling of Class MarineAnimals");
+        marineAnimals.printMarineAnimal();
+
+        System.out.println("The Function calling of Class BlueWhale");
+        bluewhale.printBlueWhale();
+
+        System.out.println("The Function calling of Class Mammals and MarineAnimal by the Object of BlueWhale");
+        bluewhale.printMammal();
+        bluewhale.printBlueWhale();
+        bluewhale.printMarineAnimal();
+
+        
+    }
+    
+}
