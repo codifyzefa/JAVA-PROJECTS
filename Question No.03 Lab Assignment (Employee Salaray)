@@ -1,0 +1,130 @@
+// This Code is the Property of Codifyzefa
+import java.util.Scanner;
+class Employee
+{
+    String name;
+    int  age;
+    int grade ;
+    double salary;
+
+    public Employee()
+    {
+        this.name="UNKNOWN";
+        this.age=0;
+        this.grade=0;
+        this.salary=-0;
+    }
+    public Employee(String name,int age,int grade,double salary)
+    {
+        this.name=name;
+        this.age=age;
+        this.grade=grade;
+        this.salary=salary;
+    }
+    public Employee(Employee emp1)
+    {
+        this.name=emp1.name;
+        this.age=emp1.age;
+        this.grade=emp1.grade;
+        this.salary=emp1.salary;
+    }
+
+    public void showDetails()
+    {
+        System.out.println("The Name of Employee is "+name+"  "+"The age of Employee is "+age+"  "+"The Grade of Employee is "+grade+"  "+"The Salary of Employee is "+salary);
+    }
+
+    public void Increment()
+    {
+        if (grade >= 17) 
+        {
+            salary +=salary *0.05;
+        } else if (grade < 17 && grade >= 12) 
+        {
+            salary +=salary * 0.10;
+        } else if (grade < 12 && grade >= 8) 
+        {
+            salary += salary * 0.15;
+        } else if (grade < 8)
+         {
+            salary += salary * 0.20;
+        }
+}
+    public void input()
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the Name of Employee ");
+        name=sc.nextLine();
+        System.out.println("Enter the Age of Employee");
+        age=sc.nextInt();
+        System.out.println("Enter the Salary of Employee");
+        salary=sc.nextDouble();
+        System.out.println("Enter the grade of Employee");
+        grade=sc.nextInt();
+    }
+
+    public double getSalary()
+    {
+        return salary;
+    }
+}
+public class Qno3 {
+    static double addsalary(Employee emp,Employee emp1)
+    {
+        return emp.getSalary()+emp1.getSalary();
+    }
+    public static void main(String[] args) {
+        String  name="Huzaifa";
+        int age = 19;
+        double salary =1200.23;
+        int garde=12;
+        Employee emp = new Employee();
+        Employee emp1 = new Employee();
+        Employee emp2 = new Employee(name,age,garde,salary);
+        Employee emp3 = new Employee(emp2);
+        
+        System.out.println("Enter the Details of  emp");
+        emp.input();
+        System.out.println("Enter the Details of emp1");
+        emp1.input();
+
+
+        System.out.println("Details of Employee Before Increment in Salary");
+        emp.showDetails();
+        emp1.showDetails();
+        emp2.showDetails();
+
+        System.out.println("<<<< Increment in Salary >>>>");
+        emp.Increment();
+        emp1.Increment();
+        emp2.Increment();
+
+        System.out.println("Details of Employee After Increment in Salary");
+        emp.showDetails();;
+        emp1.showDetails();
+        emp2.showDetails();
+
+        System.out.println("After Addition of Salary of emp and emp1");
+        double add;
+        add=addsalary(emp3, emp1);
+        System.out.println("Total Salary is "+add);
+
+        double   s1,s2,s3;
+        s1=emp.getSalary();
+        s2=emp1.getSalary();
+        s3=emp3.getSalary();
+
+        if(s1>s2 && s1>s3)
+        {
+            System.out.println("Employee emp With Greater Salary which is "+emp.getSalary());
+        }
+        else if(s2>s1 && s2>s3)
+        {
+            System.out.println("Employee emp1 With Salary Greater which is "+emp1.getSalary());
+        }
+        else if (s3>s1 && s3>s2)
+        {
+            System.out.println("Employee emp2 with Salary Greater which is "+emp.getSalary());
+        }
+    }
+}
