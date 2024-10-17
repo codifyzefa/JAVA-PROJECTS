@@ -1,0 +1,49 @@
+// This Code is the Property of Codifyzefa
+class Employee
+{
+String name;
+String Address;
+int year;
+
+    public Employee()
+    {
+        
+    }
+    public Employee(String name,String Address,int year)
+    {
+        this.name=name;
+        this.Address=Address;
+        this.year=year;
+    }
+    public Employee (Employee emp)
+    {
+        this.name=emp.name;
+        this.Address=emp.Address;
+        this.year=emp.year;
+    }
+    public void setDetails(String name,String Address,int year)
+    {
+        this.name=name;
+        this.Address=Address;
+        this.year=year;
+    }
+    public void showDetails()
+    {
+        System.out.println("The Name of Employee is : "+name+" : The Year of Joining of Employee is : "+year+" : The Address of the Employee is "+Address);
+    }
+}
+public class Qno1 {
+    public static void main(String[] args) {
+        int year=2005;
+        String name = "Huzaifa";
+        String Address = "GOC Faislabad";
+        Employee emp = new Employee();
+        Employee emp1 = new Employee(name,Address,year);
+        Employee emp2 = new Employee(emp1);
+        emp.setDetails(name, Address, year);
+        System.out.println("The Details Are Given");
+        emp.showDetails();
+        emp1.showDetails();
+        emp2.showDetails();
+    }
+}
