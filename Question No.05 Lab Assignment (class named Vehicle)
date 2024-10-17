@@ -1,0 +1,140 @@
+// This Code is the Property of Codifyzefa
+class Vehicle {
+    double mileage;
+    double price;
+
+    public Vehicle(double mileage, double price) {
+        this.mileage = mileage;
+        this.price = price;
+    }
+
+   
+    public void showVehicle() {
+        System.out.println("The Price of Vehicle is " + price + " : " + " The Mileage of Vehicle is " + mileage);
+    }
+}
+
+class Car extends Vehicle {
+    double ownershipCost;
+    int warranty; 
+    int seatingCapacity;
+    String fuelType;
+
+    public Car(double mileage, double price, double ownershipCost, int warranty, int seatingCapacity, String fuelType) {
+        super(mileage, price);
+        this.ownershipCost = ownershipCost;
+        this.fuelType = fuelType;
+        this.warranty = warranty;
+        this.seatingCapacity = seatingCapacity;
+    }
+
+    public void showCar() {
+        System.out.println("The Ownership Cost is " + ownershipCost + " : " + " The Fuel Type is " + fuelType + " : " +
+                "The Warranty is " + warranty + " : " + "The Seating Capacity is " + seatingCapacity);
+    }
+}
+
+class Audi extends Car {
+    String modelType;
+
+    public Audi(double mileage, double price, double ownershipCost, int warranty, int seatingCapacity, String fuelType, String modelType) {
+        super(mileage, price, ownershipCost, warranty, seatingCapacity, fuelType);
+        this.modelType = modelType;
+    }
+
+    public void showAudi() {
+        System.out.println("The Model Of Audi Car is " + modelType);
+    }
+}
+
+class Ford extends Car {
+    String modelType;
+
+    public Ford(double mileage, double price, double ownershipCost, int warranty, int seatingCapacity, String fuelType, String modelType) {
+        super(mileage, price, ownershipCost, warranty, seatingCapacity, fuelType);
+        this.modelType = modelType;
+    }
+
+    public void showFord() {
+        System.out.println("The Model Type of Ford Car is : " + modelType);
+    }
+}
+
+class Bike extends Vehicle {
+    int cylinders;
+    int gears;
+    String coolingType;
+    String wheelType;
+    double fuelTankSize;
+
+    public Bike(double mileage, double price, int cylinders, int gears, String coolingType, String wheelType, double fuelTankSize) {
+        super(mileage, price);
+        this.cylinders = cylinders;
+        this.gears = gears;
+        this.coolingType = coolingType;
+        this.wheelType = wheelType;
+        this.fuelTankSize = fuelTankSize;
+    }
+
+    public void showBike() {
+        System.out.println("The Cylinder is " + cylinders + " : " + " The Gear is " + gears + " : " +
+                " The Cooling Type is " + coolingType + " : " + " The Wheel Type is " + wheelType + " : " +
+                " The Fuel Tank Size is " + fuelTankSize);
+    }
+}
+
+class Bajaj extends Bike {
+    String makeType;
+
+    public Bajaj(double mileage, double price, int cylinders, int gears, String coolingType, String wheelType, double fuelTankSize, String makeType) {
+        super(mileage, price, cylinders, gears, coolingType, wheelType, fuelTankSize);
+        this.makeType = makeType;
+    }
+
+    public void showBajaj() {
+        System.out.println("Make Type: " + makeType);
+       
+    }
+}
+
+class TVS extends Bike {
+    String makeType;
+
+    public TVS(double mileage, double price, int cylinders, int gears, String coolingType, String wheelType, double fuelTankSize, String makeType) {
+        super(mileage, price, cylinders, gears, coolingType, wheelType, fuelTankSize);
+        this.makeType = makeType;
+    }
+
+    public void showTVS() {
+        System.out.println("Make Type: " + makeType);
+   
+    }
+}
+
+public class qno5 {
+    public static void main(String[] args) {
+
+        Audi audi = new Audi(15.5, 50000, 1000, 5, 5, "Petrol", "Audi A6");
+        Ford ford = new Ford(12.0, 30000, 800, 3, 5, "Diesel", "Ford Mustang");
+
+        Bajaj bajajBike = new Bajaj(45.0, 1500, 2, 5, "Air", "Alloys", 12.0, "Bajaj Pulsar");
+        TVS tvsBike = new TVS(50.0, 1200, 1, 4, "Liquid", "Spokes", 10.0, "TVS Apache");
+
+        System.out.println("Audi Car Information:");
+        audi.showVehicle();
+        audi.showCar();
+        audi.showAudi();
+        System.out.println("Ford Car Information:");
+        ford.showVehicle();
+        ford.showCar();
+        ford.showFord();
+        System.out.println("Bajaj Bike Information:");
+        bajajBike.showVehicle();
+        bajajBike.showBike();
+        bajajBike.showBajaj();
+        System.out.println("TVS Bike Information:");
+        tvsBike.showVehicle();
+        tvsBike.showBike();
+        tvsBike.showTVS();
+    }
+}
