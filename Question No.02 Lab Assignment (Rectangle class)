@@ -1,0 +1,74 @@
+// This Code is the Property of Codifyzefa
+class Rectangle
+{
+    private double height;
+    private double width;
+
+    public Rectangle()
+    {
+        this.height=0.0;
+        this.width=0.0;
+ 
+    }
+    public Rectangle(double height , double width)
+    {
+        this.height=height;
+        this.width=width;
+    }
+    public Rectangle(Rectangle r)
+    {
+        this.height=r.height;
+        this.width=r.width;
+    }
+    public void setHeight(double height) {
+        this.height = height;
+    }
+    public double getHeight() {
+        return height;
+    }
+    
+    public void setWidth(double width) {
+        this.width = width;
+    }
+    public double getWidth() {
+        return width;
+    }
+    public double calculateArea()
+    {
+        return height * width;
+    }
+    public int campareRectangle(Rectangle r2)
+    {
+        if(this.calculateArea()>r2.calculateArea())
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    
+}
+public class Qno2 {
+    public static void main(String[] args) {
+        Rectangle r  = new Rectangle();
+        Rectangle r1 = new Rectangle(3,5);
+        Rectangle r2 = new Rectangle(4,7);
+        Rectangle r3 = new Rectangle(r2);
+
+        int answer = r1.campareRectangle(r2);
+        if(answer==1)
+        {
+            System.out.println("The Result is : Area of r1 is greater than the r2");
+        }
+        else
+        {
+            System.out.println("The Result is : Area of r1 is less than the r2");
+        }
+
+        
+    System.out.println("The Details of Copy Constructor is : ");
+    System.out.println(r3.calculateArea());
+    }
+}
