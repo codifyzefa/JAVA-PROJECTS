@@ -1,0 +1,64 @@
+// This Code is the Property of Codifyzefa
+class Animal {
+    int speed;
+    double price;
+    String diet;
+
+    public Animal(int speed, double price, String diet) {
+        this.speed = speed;
+        this.price = price;
+        this.diet = diet;
+    }
+
+    public void printInfo() {
+        System.out.println("Speed: " + speed);
+        System.out.println("Price: " + price);
+        System.out.println("Diet: " + diet);
+    }
+}
+
+
+class Cow extends Animal {
+    public Cow(int speed, double price, String diet) {
+        super(speed, price, diet); 
+    }
+    @Override
+    public void printInfo() {
+        System.out.println("Cow Information:");
+        super.printInfo();
+    }
+}
+class Dog extends Animal {
+    public Dog(int speed, double price, String diet) {
+        super(speed, price, diet); 
+    }
+    @Override
+    public void printInfo() {
+        System.out.println("Dog Information:");
+        super.printInfo();
+    }
+}
+
+class Cat extends Animal {
+    public Cat(int speed, double price, String diet) {
+        super(speed, price, diet); 
+    }
+    @Override
+    public void printInfo() {
+        System.out.println("Cat Information:");
+        super.printInfo();
+    }
+}
+
+public class qno10 {
+    public static void main(String[] args) {
+        Cow cow = new Cow(10, 1500.00, "Herbivore");
+        cow.printInfo();
+        System.out.println();
+        Dog dog = new Dog(20, 800.00, "Omnivore");
+        dog.printInfo();
+        System.out.println();
+        Cat cat = new Cat(15, 300.00, "Carnivore");
+        cat.printInfo();
+    }
+}
