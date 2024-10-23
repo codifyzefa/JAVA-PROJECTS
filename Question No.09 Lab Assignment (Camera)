@@ -1,0 +1,159 @@
+// This Code is the Property of Codifyzefa 
+class Camera {
+    private String Serialnum;
+    private String Brand;
+
+
+    public Camera() {
+        this.Serialnum = " ";
+        this.Brand = " ";
+    }
+
+    
+    public Camera(String Serialnum, String Brand) {
+        this.Serialnum = Serialnum;
+        this.Brand = Brand;
+    }
+
+    
+    public void setSerialnum(String serialnum) {
+        Serialnum = serialnum;
+    }
+
+    public String getSerialnum() {
+        return Serialnum;
+    }
+
+    public void setBrand(String brand) {
+        Brand = brand;
+    }
+
+    public String getBrand() {
+        return Brand;
+    }
+
+    
+    public void print() {
+        System.out.println("The Serial Number of Camera is " + Serialnum);
+        System.out.println("The Brand of Camera is " + Brand);
+    }
+}
+
+
+class DigitalCamera extends Camera {
+    private int pixelInM;
+    private boolean isCMOS;
+
+    public DigitalCamera() {
+        super("000000", "XXX");
+        this.pixelInM = 1;
+        this.isCMOS = false;
+    }
+ 
+    public DigitalCamera(DigitalCamera other) {
+        super(other.getSerialnum(), other.getBrand());
+        this.pixelInM = other.pixelInM;
+        this.isCMOS = other.isCMOS;
+    }
+
+
+    public DigitalCamera(int pixelInM) {
+        super("000000", "XXX");
+        this.pixelInM = pixelInM;
+        this.isCMOS = false;
+    }
+
+    
+    public DigitalCamera(int pixelInM, boolean isCMOS, String Serialnum, String Brand) {
+        super(Serialnum, Brand);
+        this.pixelInM = pixelInM;
+        this.isCMOS = isCMOS;
+    }
+
+    public void setPixelInM(int pixelInM) {
+        this.pixelInM = pixelInM;
+    }
+
+    public int getPixelInM() {
+        return pixelInM;
+    }
+
+    public void setCMOS(boolean isCMOS) {
+        this.isCMOS = isCMOS;
+    }
+
+    public boolean getCMOS() {
+        return isCMOS;
+    }
+
+  
+    @Override
+    public void print() {
+        System.out.println("The Details of DigitalCamera are:");
+        System.out.println("The Serial Number of DigitalCamera is " + getSerialnum());
+        System.out.println("The Brand of DigitalCamera is " + getBrand());
+        System.out.println("The PixelInM of DigitalCamera is " + pixelInM + " MP");
+        System.out.println("The camera has CMOS: " +isCMOS);
+    }
+}
+
+
+class FilmCamera extends Camera {
+    private int filmSize;
+
+   
+    public FilmCamera() {
+        super("000000", "XXX");
+        this.filmSize = 35;
+    }
+
+    
+    public FilmCamera(FilmCamera other) {
+        super(other.getSerialnum(), other.getBrand());
+        this.filmSize = other.filmSize;
+    }
+
+    public FilmCamera(int filmSize) {
+        super("000000", "XXX");
+        this.filmSize = filmSize;
+    }
+
+    
+    public FilmCamera(String serialnum, String brand, int filmSize) {
+        super(serialnum, brand);  
+        this.filmSize = filmSize;
+    }
+
+    
+    @Override
+    public void print() {
+        System.out.println("The Details of FilmCamera are:");
+        System.out.println("The Serial Number of FilmCamera is " + getSerialnum());
+        System.out.println("The Brand of FilmCamera is " + getBrand());
+        System.out.println("The Film Size of FilmCamera is " + filmSize + " mm");
+    }
+}
+
+public class qno9 {
+    public static void main(String[] args) {
+
+        DigitalCamera digitalCamera1 = new DigitalCamera();
+        digitalCamera1.print();
+
+        System.out.println();
+
+        DigitalCamera digitalCamera2 = new DigitalCamera(20, true, "12345678", "Nikon");
+        digitalCamera2.print();
+
+        System.out.println();
+
+        
+        FilmCamera filmCamera1 = new FilmCamera();
+        filmCamera1.print();
+
+        System.out.println();
+
+        FilmCamera filmCamera2 = new FilmCamera("87654321", "Canon", 35);
+        filmCamera2.print();
+    }
+}
