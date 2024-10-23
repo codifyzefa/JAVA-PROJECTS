@@ -1,0 +1,38 @@
+
+class Employee {
+   
+    private String name;
+    private int yearOfJoining;
+    private String address;
+
+    public void setDetails(String name, int yearOfJoining, String address) {
+        this.name = name;
+        this.yearOfJoining = yearOfJoining;
+        this.address = address;
+    }
+
+   
+    public void print() {
+        System.out.println("The Name of Employee is "+name+" : "+" The Year of Joining is "+yearOfJoining+" : "+" The Address of Employee is "+address);
+    }
+}
+
+public class qno7 {
+    public static void main(String[] args) {
+        
+        Employee emp1 = new Employee();
+        emp1.setDetails("Robert", 1994, "64C- WallsStreat");
+
+        Employee emp2 = new Employee();
+        emp2.setDetails("Sam", 2000, "68D- WallsStreat");
+
+        Employee emp3 = new Employee();
+        emp3.setDetails("John", 1999, "26B- WallsStreat");
+
+        System.out.println("Name Year of Joining Address");
+        
+        emp1.print();
+        emp2.print();
+        emp3.print();
+    }
+}
